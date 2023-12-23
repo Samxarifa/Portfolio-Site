@@ -11,7 +11,7 @@
     }
 </style>
 
-<script>
+<script lang="ts">
     /**
      * @type {number} max width in pixels
      */
