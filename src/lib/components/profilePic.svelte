@@ -28,8 +28,9 @@
         z-index: -1;
         border-radius: 50%;
         transition: var(--theme-transition);
-        background: conic-gradient(var(--lightblue), var(--lightgreen),var(--yellow), var(--lightred));
-        animation: color-scroll 5s linear 0s infinite;
+        /* background: conic-gradient(var(--lightblue), var(--lightgreen),var(--yellow), var(--lightred)); */
+        background: linear-gradient(to right, var(--lightblue), var(--lightgreen),var(--yellow), var(--lightred));
+        animation: color-scroll 10s linear 0s infinite;
     }
 
     img {
