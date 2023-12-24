@@ -39,5 +39,18 @@
         object-fit: cover;
 
     }
+
+    @media (max-width: 850px) {
+        div {
+            width: 20rem;
+            height: 20rem;
+        }
+    }
+    @media (max-width: 600px) {
+        div {
+            width: 10rem;
+            height: 10rem;
+        }
+    }
 </style>
 

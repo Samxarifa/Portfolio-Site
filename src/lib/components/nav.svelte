@@ -1,4 +1,15 @@
-<nav>
+<nav class={focused? 'focused': ''}>
+    <button id='menu-toggle' on:click={toggleNav}>
+        {#if focused}
+            <div in:fly={{y:10}}>
+                <X size={30}/>
+            </div>
+        {:else}
+            <div in:fly={{y:10}}>
+                <Menu size={30}/>
+            </div>
+        {/if}
+    </button>
     <ContentWrapper>
         <div class="content">
             <h1><a href="/">Xarifa</a></h1>
@@ -7,7 +18,7 @@
                 <li><a href="/about">Projects</a></li>
                 <li><a href="/about">Contact Me</a></li>
             </ul>
-            <button on:click={toggleTheme}>
+            <button on:click={toggleTheme} id='theme-toggle'>
                 {#if $theme === 'dark'}
                     <div in:fly={{y: 10}}>
                         <Moon />
@@ -31,16 +42,45 @@
 
 <script lang="ts">
     import {theme, toggleTheme} from '$lib/theme';
-    import {Sun, Moon, SunMoon, Home, List, Phone} from 'lucide-svelte';
+    import {Sun, Moon, SunMoon, Menu, X} from 'lucide-svelte';
     import {fly} from 'svelte/transition';
     import ContentWrapper from './contentWrapper.svelte';
+
+    let focused = false;
+
+    const toggleNav = () => {
+        focused = !focused;
+    }
 </script>
 
 <style>
+    #menu-toggle {
+        display: none;
+        width: 6rem;
+        height: 6rem;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        cursor: pointer;
+        background: var(--fg);
+        border: none;
+        color: var(--text);
+        border-radius: 50%;
+        transition: var(--theme-transition);
+    }
+
+    #menu-toggle > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    
     h1 {
         text-transform: uppercase;
         margin-right: auto;
         height: 100%;
+        
     }
     
     h1 a {
@@ -62,7 +102,7 @@
         background-position: 100% 100%;
     }
 
-    button {
+    #theme-toggle {
         padding-inline: 2rem;
         border: none;
         background: var(--fg);
@@ -75,7 +115,7 @@
         height: 100%;
     }
 
-    button > div {
+    #theme-toggle > div {
         display: flex;
         align-items: center;
         gap: 1rem;
@@ -153,5 +193,63 @@
     li a:hover::after {
         transform: scaleX(1);
         transform-origin: bottom left;
+    }
+
+    @media (max-width: 565px) {
+        #menu-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        h1 {
+            margin: 0;
+            margin-top: 1rem;
+            height: fit-content;
+            font-size: 3rem;
+        }
+        
+        nav {
+            overflow: hidden;
+            position: fixed;
+            transition: height 0.2s ease-in-out, var(--theme-transition);
+            height: 7rem;
+        }
+
+        .focused {
+            height: 100vh;
+        }
+
+        .content {
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        ul {
+            flex-direction: column;
+            height: fit-content;
+            position: unset;
+            transform: unset;
+            margin-bottom: auto;
+            margin-top: 5rem;
+            width: 100%;
+        }
+
+        li {
+            width: 100%;
+            justify-content: center;
+            height: 10rem;
+        }
+
+        a {
+            width: 100%;
+            background-color: var(--fg);
+            border-radius: 1rem;
+        }
+
+        #theme-toggle {
+            height: 5rem;
+        }
     }
 </style>

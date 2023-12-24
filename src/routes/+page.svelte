@@ -15,10 +15,10 @@
     import Typewriter from 'typewriter-effect/dist/core';
     import { onMount } from 'svelte';
 
-    let span: HTMLSpanElement | null = null;
+    let span: HTMLSpanElement;
     onMount(() => {
         browser && new Typewriter(span, {
-            strings: ['Portfolio', 'Website', 'Projects','Blog','Page','Profile'],
+            strings: ['Portfolio', 'Website', 'Projects','Tests','Page','Code'],
             autoStart: true,
             loop: true,
             delay: 100,
@@ -117,6 +117,13 @@
         margin-inline: 4rem;
         justify-content: space-between;
         align-items: center;
+    }
+
+    @media (max-width: 450px) {
+        hgroup {
+            flex-direction: column-reverse;
+            justify-content: center;
+        }
     }
 
 </style>
