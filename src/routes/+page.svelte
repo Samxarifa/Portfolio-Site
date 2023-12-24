@@ -2,15 +2,31 @@
     <hgroup>
         <div>
             <h1>Xarifa</h1>
-            <h2>Sam Hay's Portfolio</h2>
+            <h2>Sam Hay's <span bind:this={span}> </span></h2>
         </div>
         <ProfilePic />
     </hgroup>
 </ContentWrapper>
 
 <script lang="ts">
+    import { browser } from '$app/environment';
     import ContentWrapper from '$lib/components/contentWrapper.svelte';
     import ProfilePic from '$lib/components/profilePic.svelte';
+    import Typewriter from 'typewriter-effect/dist/core';
+    import { onMount } from 'svelte';
+
+    let span: HTMLSpanElement | null = null;
+    onMount(() => {
+        browser && new Typewriter(span, {
+            strings: ['Portfolio', 'Website', 'Projects','Blog','Page','Profile'],
+            autoStart: true,
+            loop: true,
+            delay: 100,
+            deleteSpeed: 100,
+            pauseFor: 5000,
+        });
+    });
+    
 </script>
 
 <style>
@@ -46,6 +62,25 @@
         }
         100% {
             background-position: 0% 100%;
+        }
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+    @keyframes blink {
+        from,
+        to {
+            border-color: transparent;
+        }
+        50% {
+            border-color: var(--text);
         }
     }
 
