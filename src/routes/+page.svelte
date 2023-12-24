@@ -1,13 +1,16 @@
 <ContentWrapper max={1400}>
     <hgroup>
-        <h1>Xarifa</h1>
-        <h2>Sam Hay's Portfolio</h2>
+        <div>
+            <h1>Xarifa</h1>
+            <h2>Sam Hay's Portfolio</h2>
+        </div>
+        <ProfilePic />
     </hgroup>
 </ContentWrapper>
 
 <script lang="ts">
-    import {theme} from '$lib/theme';
     import ContentWrapper from '$lib/components/contentWrapper.svelte';
+    import ProfilePic from '$lib/components/profilePic.svelte';
 </script>
 
 <style>
@@ -74,11 +77,11 @@
 
     hgroup {
         display: flex;
-        flex-direction: column;
         gap: 1rem;
         height: 40rem;
         margin-inline: 4rem;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
     }
 
 </style>
