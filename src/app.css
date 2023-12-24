@@ -17,6 +17,8 @@
 :root {
     --lightblue: #38bdf8;
     --lightgreen: #34d399;
+    --lightred: #f87171;
+    --yellow: #facc15;
 }
 
 [data-theme="light"] {
@@ -42,12 +44,13 @@ html {
     font-size: 62.5%;
 }
 
+html:not(.no-transition) {
+    --theme-transition: color 0.2s ease-in-out 0s, background-color 0.2s ease-in-out 0s;
+}
+
 body {
     background-color: var(--bg);
     color: var(--text);
     font-size: 1.6rem;
-}
-
-html:not(.no-transition) * {
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    transition: var(--theme-transition);
 }

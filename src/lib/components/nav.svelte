@@ -1,7 +1,7 @@
 <nav>
     <ContentWrapper>
         <div class="content">
-            <h1>Xarifa</h1>
+            <h1><a href="/">Xarifa</a></h1>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">Projects</a></li>
@@ -40,9 +40,26 @@
     h1 {
         text-transform: uppercase;
         margin-right: auto;
-        background: linear-gradient(to right, var(--lightblue), var(--lightgreen));
+        height: 100%;
+    }
+    
+    h1 a {
+        background: linear-gradient(to right, var(--lightblue), var(--lightgreen),var(--yellow), var(--lightred));
+        background-size: 300% 100%;
         background-clip: text;
         color: transparent;
+        text-decoration: none;
+        padding-inline: 1rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-position 0.2s ease;
+
+    }
+
+    h1 a:hover {
+        background-position: 100% 100%;
     }
 
     button {
@@ -50,6 +67,7 @@
         border: none;
         background: var(--fg);
         color: var(--text);
+        transition: var(--theme-transition);
         cursor: pointer;
         font-size: 1.5rem;
         text-transform: capitalize;
@@ -69,10 +87,11 @@
         left: 0;
         width: 100%;
         height: 6rem;
-        padding: 1rem 2rem;
+        padding: 1rem;
         background: var(--bg);
         color: var(--text);
         z-index: 1;
+        transition: var(--theme-transition);
     }
 
     .content {
@@ -103,7 +122,7 @@
         justify-content: center;
     }
 
-    a {
+    li a {
         color: var(--text);
         text-decoration: none;
         font-size: 1.5rem;
@@ -114,9 +133,10 @@
         padding: 1rem;
         height: 100%;
         position: relative;
+        transition: var(--theme-transition);
     }
 
-    a::after {
+    li a::after {
         content: '';
         position: absolute;
         width: 100%;
@@ -130,7 +150,7 @@
         transition: transform 0.1s ease-out;   
     }
 
-    a:hover::after {
+    li a:hover::after {
         transform: scaleX(1);
         transform-origin: bottom left;
     }
