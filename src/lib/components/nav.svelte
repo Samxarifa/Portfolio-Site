@@ -1,14 +1,12 @@
 <nav class={focused? 'focused': ''}>
+    <button id='menu-toggle' on:click={toggleNav}>
+        <div>
+            <span />
+        </div>
+    </button>
     <ContentWrapper>
         <div class="content">
-            <header>
-                <button id='menu-toggle' on:click={toggleNav}>
-                    <div>
-                        <span />
-                    </div>
-                </button>
-                <h1><a on:click={closeNav} href="/">Xarifa</a></h1>
-            </header>
+            <h1><a on:click={closeNav} href="/">Xarifa</a></h1>
             <ul>
                 <li><a on:click={closeNav} href="/">Home</a></li>
                 <li><a on:click={closeNav} href="/projects">Projects</a></li>
@@ -114,7 +112,7 @@
         transform: rotate(-45deg);
     } 
 
-    header {
+    h1 {
         text-transform: uppercase;
         margin-right: auto;
         height: 100%;
@@ -169,6 +167,7 @@
         color: var(--text);
         z-index: 1;
         transition: var(--theme-transition);
+        position: relative;
     }
 
     .content {
@@ -244,16 +243,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        
-        header {
-            height: 8rem;
-            width: 100%;
-            display: flex;
-            align-items: center;
             position: absolute;
             top: 0;
             left: 0;
+        }
+        
+        h1 {
+            font-size: 3rem;
         }
         
         nav {
@@ -264,8 +260,10 @@
         }
 
         h1 {
-            font-size: 3.2rem;
-            justify-self: center;
+            font-size: 3rem;
+            height: fit-content;
+            margin-right: 0;
+            margin-top: 1rem;
         }
 
         .focused {
