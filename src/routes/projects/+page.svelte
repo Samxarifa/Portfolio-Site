@@ -15,4 +15,10 @@
     main {
         margin: 4rem;
     }
+
+    @media (max-width: 565px) {
+        main {
+            margin-top: 12rem;
+        }
+    }
 </style>

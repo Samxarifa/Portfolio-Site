@@ -1,22 +1,16 @@
 <nav class={focused? 'focused': ''}>
     <button id='menu-toggle' on:click={toggleNav}>
-        {#if focused}
-            <div in:fly={{y:10}}>
-                <X size={30}/>
-            </div>
-        {:else}
-            <div in:fly={{y:10}}>
-                <Menu size={30}/>
-            </div>
-        {/if}
+        <div>
+            <span />
+        </div>
     </button>
     <ContentWrapper>
         <div class="content">
             <h1><a href="/">Xarifa</a></h1>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/contact">Contact Me</a></li>
+                <li><a on:click={toggleNav} href="/">Home</a></li>
+                <li><a on:click={toggleNav} href="/projects">Projects</a></li>
+                <li><a on:click={toggleNav} href="/contact">Contact Me</a></li>
             </ul>
             <button on:click={toggleTheme} id='theme-toggle'>
                 {#if $theme === 'dark'}
@@ -42,7 +36,7 @@
 
 <script lang="ts">
     import {theme, toggleTheme} from '$lib/theme';
-    import {Sun, Moon, SunMoon, Menu, X} from 'lucide-svelte';
+    import {Sun, Moon, SunMoon} from 'lucide-svelte';
     import {fly} from 'svelte/transition';
     import ContentWrapper from './contentWrapper.svelte';
 
@@ -62,7 +56,7 @@
         top: 1rem;
         left: 1rem;
         cursor: pointer;
-        background: var(--fg);
+        background: transparent;
         border: none;
         color: var(--text);
         border-radius: 50%;
@@ -76,6 +70,46 @@
         height: 100%;
     }
     
+    #menu-toggle > div > span {
+        width: 3rem;
+        height: 3px;
+        background: var(--text);
+        border-radius: 1rem;
+        transition: width 0.2s ease, transform 0.2s ease;
+    }
+
+    nav.focused #menu-toggle > div > span {
+        width: 0;
+        transform: translateX(-1.5rem);
+    }
+
+    #menu-toggle > div > span::before, #menu-toggle > div > span::after {
+        content: '';
+        position: absolute;
+        width: 3rem;
+        height: 3px;
+        background: var(--text);
+        border-radius: 1rem;
+    }
+
+    #menu-toggle > div > span::before {
+        transform: translate(-1.5rem, -1rem);
+        transition: transform 0.2s ease;
+    }
+    
+    #menu-toggle > div > span::after {
+        transform: translate(-1.5rem, 1rem);
+        transition: transform 0.2s ease;
+    }
+
+    nav.focused #menu-toggle > div > span::before {
+        transform: rotate(45deg);
+    }    
+
+    nav.focused #menu-toggle > div > span::after {
+        transform: rotate(-45deg);
+    } 
+
     h1 {
         text-transform: uppercase;
         margin-right: auto;
@@ -220,7 +254,7 @@
             overflow: hidden;
             position: fixed;
             transition: height 0.2s ease-in-out, var(--theme-transition);
-            height: 7rem;
+            height: 8rem;
         }
 
         .focused {
