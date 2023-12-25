@@ -244,6 +244,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background: blue;
         }
         
         h1 {
@@ -251,6 +252,7 @@
             margin-top: 1rem;
             height: fit-content;
             font-size: 3rem;
+            background: red;
         }
         
         nav {
@@ -258,6 +260,7 @@
             position: fixed;
             transition: height 0.2s ease-in-out, var(--theme-transition);
             height: 8rem;
+            background: green;
         }
 
         .focused {
