@@ -15,8 +15,8 @@
             <h1><a href="/">Xarifa</a></h1>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/about">Projects</a></li>
-                <li><a href="/about">Contact Me</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/contact">Contact Me</a></li>
             </ul>
             <button on:click={toggleTheme} id='theme-toggle'>
                 {#if $theme === 'dark'}

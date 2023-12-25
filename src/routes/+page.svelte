@@ -7,7 +7,8 @@
         <ProfilePic />
     </hgroup> 
     <main>
-        <h2>Work In Progress...</h2>
+        <h2>Home Page</h2>
+        <p>Work in Progress...</p>
     </main>      
 </ContentWrapper>
 
