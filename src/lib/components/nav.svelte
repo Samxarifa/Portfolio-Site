@@ -1,12 +1,14 @@
 <nav class={focused? 'focused': ''}>
-    <button id='menu-toggle' on:click={toggleNav}>
-        <div>
-            <span />
-        </div>
-    </button>
     <ContentWrapper>
         <div class="content">
-            <h1><a on:click={closeNav} href="/">Xarifa</a></h1>
+            <header>
+                <button id='menu-toggle' on:click={toggleNav}>
+                    <div>
+                        <span />
+                    </div>
+                </button>
+                <h1><a on:click={closeNav} href="/">Xarifa</a></h1>
+            </header>
             <ul>
                 <li><a on:click={closeNav} href="/">Home</a></li>
                 <li><a on:click={closeNav} href="/projects">Projects</a></li>
@@ -56,9 +58,6 @@
         display: none;
         width: 8rem;
         height: 8rem;
-        position: absolute;
-        top: 0;
-        left: 0;
         cursor: pointer;
         background: transparent;
         border: none;
@@ -79,6 +78,8 @@
         background: var(--text);
         border-radius: 1rem;
         transition: width 0.2s ease, transform 0.2s ease;
+        margin-top: 4px;
+        transform: scale(0.95);
     }
 
     nav.focused #menu-toggle > div > span {
@@ -113,7 +114,7 @@
         transform: rotate(-45deg);
     } 
 
-    h1 {
+    header {
         text-transform: uppercase;
         margin-right: auto;
         height: 100%;
@@ -159,7 +160,6 @@
     }
 
     nav {
-        position: relative;
         top: 0;
         left: 0;
         width: 100%;
@@ -244,15 +244,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: blue;
         }
         
-        h1 {
-            margin: 0;
-            margin-top: 1rem;
-            height: fit-content;
-            font-size: 3rem;
-            background: red;
+        header {
+            height: 8rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         
         nav {
@@ -260,7 +261,11 @@
             position: fixed;
             transition: height 0.2s ease-in-out, var(--theme-transition);
             height: 8rem;
-            background: green;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            justify-self: center;
         }
 
         .focused {
@@ -279,7 +284,7 @@
             position: unset;
             transform: unset;
             margin-bottom: auto;
-            margin-top: 5rem;
+            margin-top: 8rem;
             width: 100%;
         }
 
