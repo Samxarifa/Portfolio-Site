@@ -1,3 +1,9 @@
+<svelte:head>
+    <title>Xarifa</title>
+    <meta name="description" content="Sam Hay's Portfolio Website" />
+    <link rel="icon" href="/profile-pic.png" />
+</svelte:head>
+
 <Nav />
 <main>
     <slot />
