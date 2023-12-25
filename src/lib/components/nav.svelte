@@ -224,7 +224,7 @@
         }
 
         .focused {
-            height: 100vh;
+            height: 100dvh;
         }
 
         .content {
