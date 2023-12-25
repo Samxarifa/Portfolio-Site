@@ -6,11 +6,11 @@
     </button>
     <ContentWrapper>
         <div class="content">
-            <h1><a href="/">Xarifa</a></h1>
+            <h1><a on:click={closeNav} href="/">Xarifa</a></h1>
             <ul>
-                <li><a on:click={toggleNav} href="/">Home</a></li>
-                <li><a on:click={toggleNav} href="/projects">Projects</a></li>
-                <li><a on:click={toggleNav} href="/contact">Contact Me</a></li>
+                <li><a on:click={closeNav} href="/">Home</a></li>
+                <li><a on:click={closeNav} href="/projects">Projects</a></li>
+                <li><a on:click={closeNav} href="/contact">Contact Me</a></li>
             </ul>
             <button on:click={toggleTheme} id='theme-toggle'>
                 {#if $theme === 'dark'}
@@ -45,21 +45,24 @@
     const toggleNav = () => {
         focused = !focused;
     }
+
+    const closeNav = () => {
+        focused = false;
+    }
 </script>
 
 <style>
     #menu-toggle {
         display: none;
-        width: 6rem;
-        height: 6rem;
+        width: 8rem;
+        height: 8rem;
         position: absolute;
-        top: 1rem;
-        left: 1rem;
+        top: 0;
+        left: 0;
         cursor: pointer;
         background: transparent;
         border: none;
         color: var(--text);
-        border-radius: 50%;
         transition: var(--theme-transition);
     }
 
