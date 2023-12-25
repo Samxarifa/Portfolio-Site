@@ -54,8 +54,11 @@
 <style>
     #menu-toggle {
         display: none;
-        width: 8rem;
-        height: 8rem;
+        width: 7rem;
+        height: 7rem;
+        position: absolute;
+        top: 0;
+        left: 0;
         cursor: pointer;
         background: transparent;
         border: none;
@@ -243,9 +246,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            position: absolute;
-            top: 0;
-            left: 0;
         }
         
         h1 {
