@@ -5,7 +5,10 @@
             <h2>Sam Hay's <span bind:this={span}> </span></h2>
         </div>
         <ProfilePic />
-    </hgroup>
+    </hgroup> 
+    <main>
+        <h2>Work In Progress...</h2>
+    </main>      
 </ContentWrapper>
 
 <script lang="ts">
@@ -117,6 +120,10 @@
         margin-inline: 4rem;
         justify-content: space-between;
         align-items: center;
+    }
+
+    main {
+        margin-inline: 4rem;
     }
 
     @media (max-width: 450px) {
