@@ -10,7 +10,7 @@
             <ul>
                 <li><a on:click={closeNav} href="/">Home</a></li>
                 <li><a on:click={closeNav} href="/posts">Posts</a></li>
-                <li><a on:click={closeNav} href="/contact">Contact Me</a></li>
+                <li><a on:click={closeNav} href="/links">Links</a></li>
             </ul>
             <button on:click={toggleTheme} id='theme-toggle'>
                 {#if $theme === 'dark'}

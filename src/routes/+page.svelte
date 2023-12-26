@@ -2,7 +2,7 @@
     <hgroup>
         <div>
             <h1>Xarifa</h1>
-            <h2>Sam Hay's <span bind:this={span}> </span></h2>
+            <h2 id='tagline'>Sam Hay's <span bind:this={span}> </span></h2>
         </div>
         <ProfilePic />
     </hgroup> 
@@ -112,6 +112,10 @@
         background: linear-gradient(to right, var(--lightblue), var(--lightgreen),var(--yellow), var(--lightred));
         background-size: 300% 100%;
         animation: slide-in 10s ease-out infinite, color-scroll 15s ease 0s infinite;
+    }
+
+    h2:not(#tagline) {
+        font-size: 5rem;
     }
 
     hgroup {
