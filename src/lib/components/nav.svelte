@@ -9,7 +9,7 @@
             <h1><a on:click={closeNav} href="/">Xarifa</a></h1>
             <ul>
                 <li><a on:click={closeNav} href="/">Home</a></li>
-                <li><a on:click={closeNav} href="/projects">Projects</a></li>
+                <li><a on:click={closeNav} href="/posts">Posts</a></li>
                 <li><a on:click={closeNav} href="/contact">Contact Me</a></li>
             </ul>
             <button on:click={toggleTheme} id='theme-toggle'>
@@ -214,7 +214,7 @@
         transition: var(--theme-transition);
     }
 
-    @media (min-width: 565px) {
+    @media (min-width: 570px) {
         li a {
             transition: var(--theme-transition), background-color none;
         }
@@ -240,7 +240,7 @@
     }
 
 
-    @media (max-width: 565px) {
+    @media (max-width: 570px) {
         #menu-toggle {
             display: flex;
             justify-content: center;

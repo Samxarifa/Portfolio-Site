@@ -10,15 +10,3 @@
     import ContentWrapper from "$lib/components/contentWrapper.svelte";
 
 </script>
-
-<style>
-    main {
-        margin: 4rem;
-    }
-
-    @media (max-width: 565px) {
-        main {
-            margin-top: 12rem;
-        }
-    }
-</style>

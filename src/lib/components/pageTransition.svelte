@@ -12,5 +12,12 @@
 <style>
     div {
         height: 100%;
+        margin: 4rem;
+    }
+
+    @media (max-width: 570px) {
+        div {
+            margin-top: 12rem;
+        }
     }
 </style>

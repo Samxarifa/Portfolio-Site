@@ -56,3 +56,17 @@ body {
     font-size: 1.6rem;
     transition: var(--theme-transition);
 }
+
+@media (max-width: 500px) {
+    html {
+        font-size: 60%;
+    }
+    
+}
+
+@media (max-width: 400px) {
+    html {
+        font-size: 58%;
+    }
+    
+}

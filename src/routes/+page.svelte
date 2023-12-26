@@ -118,19 +118,21 @@
         display: flex;
         gap: 1rem;
         height: 40rem;
-        margin-inline: 4rem;
         justify-content: space-between;
         align-items: center;
     }
 
-    main {
-        margin-inline: 4rem;
+    @media (max-width: 570px) {
+        hgroup {
+            height: 25rem;
+        }
     }
-
+    
     @media (max-width: 450px) {
         hgroup {
             flex-direction: column-reverse;
             justify-content: center;
+            margin-bottom: 5rem;
         }
     }
 
