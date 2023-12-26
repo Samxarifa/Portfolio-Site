@@ -63,9 +63,8 @@
         background: transparent;
         border: none;
         color: var(--text);
-        transition: var(--theme-transition);
     }
-
+    
     #menu-toggle > div {
         display: flex;
         align-items: center;
@@ -78,7 +77,7 @@
         height: 3px;
         background: var(--text);
         border-radius: 1rem;
-        transition: width 0.2s ease, transform 0.2s ease;
+        transition: width 0.2s ease, transform 0.2s ease, var(--theme-transition);
         margin-top: 4px;
         transform: scale(0.95);
     }
@@ -99,12 +98,12 @@
 
     #menu-toggle > div > span::before {
         transform: translate(-1.5rem, -1rem);
-        transition: transform 0.2s ease;
+        transition: transform 0.2s ease, var(--theme-transition);
     }
     
     #menu-toggle > div > span::after {
         transform: translate(-1.5rem, 1rem);
-        transition: transform 0.2s ease;
+        transition: transform 0.2s ease, var(--theme-transition);
     }
 
     nav.focused #menu-toggle > div > span::before {
@@ -292,10 +291,12 @@
             height: 10rem;
         }
 
-        a {
+        li a {
             width: 100%;
             background-color: var(--fg);
             border-radius: 1rem;
+            margin-inline: 1rem;
+            font-size: 2rem;
         }
 
         #theme-toggle {

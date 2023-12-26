@@ -5,14 +5,17 @@
 </svelte:head>
 
 <Nav />
-<main>
+<PageTransition url={data.url}>
     <slot />
-</main>
+</PageTransition>
 
 <script lang="ts">
     import '../app.css';
     import Nav from '$lib/components/nav.svelte';
     import {onMount} from 'svelte';
+    import PageTransition from "$lib/components/pageTransition.svelte";
+
+    export let data;
 
     onMount(() => {
         document.documentElement.classList.remove('no-transition');
