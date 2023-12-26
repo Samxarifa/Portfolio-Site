@@ -1,7 +1,3 @@
-<svelte:head>
-    <title>{data.meta.title}</title>
-</svelte:head>
-
 <ContentWrapper max={1000}>
     <article>
         <hgroup>
