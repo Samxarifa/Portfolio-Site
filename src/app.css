@@ -57,6 +57,24 @@ body {
     transition: var(--theme-transition);
 }
 
+#markdown h1 {
+    font-size: 3rem;
+}
+
+#markdown pre {
+    background-color: var(--fg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    tab-size: 2;
+    margin-block: 1rem;
+}
+
+#markdown :is(h1,h2,h3,h4,h5,h6) {
+    /* font-size: 3rem; */
+    margin-block: 1rem;
+}
+
 @media (max-width: 500px) {
     html {
         font-size: 60%;

@@ -1,4 +1,4 @@
-<ContentWrapper max={1400}> 
+<ContentWrapper max={1000}> 
     <main>
         <h2>Posts</h2>
 
@@ -8,7 +8,7 @@
                     <li>
                         <a href='posts/{post.slug}'>
                             <h3>{post.title}</h3>
-                            <p class='date'>{post.date}</p>
+                            <p class='date'>{formatDate(post.date,'short')}</p>
                             <p class="description">{post.description}</p>
                         </a>
                     </li>
@@ -20,6 +20,7 @@
 
 <script lang="ts">
     import ContentWrapper from "$lib/components/contentWrapper.svelte";
+    import { formatDate } from "$lib/utils.js";
 
     export let data;
 
