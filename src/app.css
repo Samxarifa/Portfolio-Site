@@ -5,6 +5,17 @@
         --bg: #121212;
         --fg: #2a2a2a;
         --text: white;
+
+        --shiki-color-text: #c9d1d9;
+        --shiki-token-constant: #79c0ff;
+        --shiki-token-string: #a5d6ff;
+        --shiki-token-comment: #8b949e;
+        --shiki-token-keyword: #ff7b72;
+        --shiki-token-parameter: #c9d1d9;
+        --shiki-token-function: #d2a8ff;
+        --shiki-token-string-expression: #a5d6ff;
+        --shiki-token-punctuation: #c9d1d9;
+        --shiki-token-link: #000012;
     }
 }
 
@@ -13,6 +24,17 @@
         --bg: #f5f5f5;
         --fg: #d4d4d4;
         --text: #121212;
+
+        --shiki-color-text: #24292f;
+        --shiki-token-constant: #0550ae;
+        --shiki-token-string: #24292f;
+        --shiki-token-comment: #6e7781;
+        --shiki-token-keyword: #cf222e;
+        --shiki-token-parameter: #24292f;
+        --shiki-token-function: #8250df;
+        --shiki-token-string-expression: #0a3069;
+        --shiki-token-punctuation: #24292f;
+        --shiki-token-link: #000012;
     }
 }
 
@@ -21,18 +43,43 @@
     --lightgreen: #34d399;
     --lightred: #f87171;
     --yellow: #facc15;
+
+    --shiki-color-background: var(--fg);
 }
 
 [data-theme="light"] {
     --bg: #f5f5f5;
     --fg: #d4d4d4;
     --text: #121212;
+
+    --shiki-color-text: #24292f;
+    --shiki-token-constant: #0550ae;
+    --shiki-token-string: #24292f;
+    --shiki-token-comment: #6e7781;
+    --shiki-token-keyword: #cf222e;
+    --shiki-token-parameter: #24292f;
+    --shiki-token-function: #8250df;
+    --shiki-token-string-expression: #0a3069;
+    --shiki-token-punctuation: #24292f;
+    --shiki-token-link: #000012;
+
 }
 
 [data-theme="dark"] {
     --bg: #121212;
     --fg: #2a2a2a;
     --text: white;
+
+    --shiki-color-text: #c9d1d9;
+    --shiki-token-constant: #79c0ff;
+    --shiki-token-string: #a5d6ff;
+    --shiki-token-comment: #8b949e;
+    --shiki-token-keyword: #ff7b72;
+    --shiki-token-parameter: #c9d1d9;
+    --shiki-token-function: #d2a8ff;
+    --shiki-token-string-expression: #a5d6ff;
+    --shiki-token-punctuation: #c9d1d9;
+    --shiki-token-link: #000012;
 }
 
 * {
@@ -54,6 +101,10 @@ body {
     background-color: var(--bg);
     color: var(--text);
     font-size: 1.6rem;
+    transition: var(--theme-transition);
+}
+
+#markdown, #markdown * {
     transition: var(--theme-transition);
 }
 

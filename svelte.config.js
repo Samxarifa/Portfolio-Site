@@ -10,7 +10,7 @@ const mdsvexOptions = {
 	extensions: ['.md'],
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
-			const highlighter = await shiki.getHighlighter({ theme: 'nord', langs: ['javascript', 'typescript', 'html', 'css', 'json', 'python','c#','java', 'bash'] });
+			const highlighter = await shiki.getHighlighter({ theme: 'css-variables', langs: ['javascript', 'typescript', 'html', 'css', 'json', 'python','c#','java', 'bash'] });
 			const html = escapeSvelte(highlighter.codeToHtml(code, { lang }));
 			return `{@html \`${html}\`}`;
 		}

@@ -15,6 +15,13 @@ print('Hello World! 👋')
 
 ```ts
 console.log('Hello World! 👋');
+// Test Comment
+
+const test = 0;
+
+function testFunc(hello:string) {
+    return hello;
+}
 ```
 
 ```java
