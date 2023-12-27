@@ -1,6 +1,6 @@
 <li use:inview={{unobserveOnEnter:true}} on:inview_enter={handleView}>
     {#if visible}    
-        <a href='posts/{post.slug}' in:fly={{x:100}}>
+        <a href='posts/{post.slug}' in:fade={{delay:200}}>
             <h3>{post.title}</h3>
             <p class='date'>{formatDate(post.date,'short')}</p>
             <p class="description">{post.description}</p>
@@ -11,7 +11,7 @@
 <script lang="ts">
     import { formatDate } from "$lib/utils.js";
     import {inview} from 'svelte-inview';
-    import { fly } from "svelte/transition";
+    import { fade } from "svelte/transition";
     
     export let post : {
         title: string,
@@ -30,6 +30,7 @@
 <style>
     li {
         margin-bottom: 2rem;
+        min-height: 15rem;
     }
 
     li::after {
