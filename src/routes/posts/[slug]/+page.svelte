@@ -31,7 +31,7 @@
     }
 
     hgroup {
-        margin-bottom: 5rem;
+        margin-bottom: 3rem;
     }
 
     hgroup::after {
@@ -41,7 +41,7 @@
         height: 5px;
         border-radius: 1rem;
         background-color: var(--fg);
-        margin-top: 2rem;
+        margin-top: 3rem;
         transition: var(--theme-transition);
     }
 
