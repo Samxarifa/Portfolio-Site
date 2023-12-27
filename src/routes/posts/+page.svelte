@@ -1,10 +1,12 @@
+<svelte:window bind:scrollY={y} />
 <ContentWrapper max={1000}> 
-    <main>
+    
+    <main in:fly={{y: 100}}>
         <h2>Posts</h2>
 
         <section>
             <ul>
-                {#each data.posts as post}
+                {#each data.posts as post} 
                     <li>
                         <a href='posts/{post.slug}'>
                             <h3>{post.title}</h3>
@@ -21,9 +23,10 @@
 <script lang="ts">
     import ContentWrapper from "$lib/components/contentWrapper.svelte";
     import { formatDate } from "$lib/utils.js";
+    import { fly } from "svelte/transition";
 
     export let data;
-
+    let y: number;
 
 </script>
 

@@ -1,6 +1,6 @@
 <ContentWrapper max={1400}>
     <hgroup>
-        <div>
+        <div in:fly={{x: -100}}>
             <h1>Xarifa</h1>
             <h2 id='tagline'>Sam Hay's <span bind:this={span}> </span></h2>
         </div>
@@ -18,6 +18,7 @@
     import ProfilePic from '$lib/components/profilePic.svelte';
     import Typewriter from 'typewriter-effect/dist/core';
     import { onMount } from 'svelte';
+    import { fly } from 'svelte/transition';
 
     let span: HTMLSpanElement;
     onMount(() => {

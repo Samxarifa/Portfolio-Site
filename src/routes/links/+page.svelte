@@ -1,11 +1,12 @@
 <ContentWrapper max={1000}> 
-    <main>
+    <main in:fly={{y: 100}}>
         <h2>Links</h2>
 
         <section>
             <ul>
-                <li><a href="https://www.github.com/Samxarifa"><span><Github size={64}/></span></a></li>
-                <li><a href="mailto:sam@xarifa.co.uk"><span><Mail size={64}/></span></a></li>
+                {#each items as item, i}
+                    <li in:fly={{x: -100,delay:(100*(i+1)+100)}}><a href={item.url}><span><svelte:component this={item.icon} size={64} /></span></a></li>
+                {/each}
             </ul>
         </section>
     </main>
@@ -15,6 +16,25 @@
 
     import ContentWrapper from "$lib/components/contentWrapper.svelte";
     import { Github, Mail } from "lucide-svelte";
+    import { onMount } from "svelte";
+    import { fly } from "svelte/transition";
+    
+    let items: {url: string, icon: typeof Github}[] = [];
+
+    onMount(() => {
+        items = [
+            {
+                url: 'https://www.github.com/Samxarifa',
+                icon: Github
+            },
+            {
+                url: 'mailto:sam@xarifa.co.uk',
+                icon: Mail
+            }
+        ]
+    });
+        
+
 
 </script>
 
