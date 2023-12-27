@@ -1,7 +1,6 @@
 <div in:fly={{x: 100}}><img src="profile-pic.png" alt="Sam Hay with Dog" /></div>
 
 <script lang="ts">
-
     import { fly } from "svelte/transition";
 
 </script>

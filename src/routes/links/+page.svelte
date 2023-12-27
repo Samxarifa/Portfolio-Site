@@ -1,5 +1,5 @@
 <ContentWrapper max={1000}> 
-    <main in:fly={{y: 100}}>
+    <main>
         <h2>Links</h2>
 
         <section>
