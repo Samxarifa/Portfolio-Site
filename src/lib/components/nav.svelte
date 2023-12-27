@@ -212,6 +212,7 @@
         height: 100%;
         position: relative;
         transition: var(--theme-transition);
+        width: 8rem;
     }
 
     @media (min-width: 570px) {
