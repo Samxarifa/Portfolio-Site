@@ -3,7 +3,7 @@
 </script>
 
 <div in:fly={{ x: 100 }}>
-    <img src="profile-pic.png" alt="Sam Hay with Dog" />
+    <img src="profile-pic.png" alt="Sam Hay with Dog" loading="lazy" />
 </div>
 
 <style>

@@ -1,7 +1,7 @@
 ---
 title: Pet Rocks
 description: A Pet Rocks eCommerce Site
-date: "2023-12-27"
+date: 2023-12-27
 published: false
 ---
 

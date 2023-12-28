@@ -134,7 +134,7 @@ body {
 
 #markdown hr {
     background-color: var(--fg);
-    height: 5px;
+    height: 2px;
     border: none;
     margin-block: 2rem;
     width: 95%;

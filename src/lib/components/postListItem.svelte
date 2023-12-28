@@ -91,4 +91,29 @@
         grid-row: 2/3;
         grid-column: 1/-1;
     }
+
+    @media (max-width: 570px) {
+        a {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 0;
+        }
+
+        h3 {
+            grid-row: 1/2;
+            grid-column: 1/-1;
+            font-size: 2.4rem;
+        }
+
+        .date {
+            grid-row: 2/3;
+            grid-column: 1/-1;
+            justify-content: start;
+        }
+
+        .description {
+            grid-row: 3/4;
+            grid-column: 1/-1;
+        }
+    }
 </style>
