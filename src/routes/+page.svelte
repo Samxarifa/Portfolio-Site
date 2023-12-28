@@ -6,10 +6,10 @@
         </div>
         <ProfilePic />
     </hgroup> 
-    <main>
+    <main in:fly={{y:100, delay:500}}>
         <h2>Home Page</h2>
         <p>Work in Progress...</p>
-    </main>      
+    </main>
 </ContentWrapper>
 
 <script lang="ts">

@@ -151,6 +151,7 @@
         text-transform: capitalize;
         border-radius: 1rem;
         height: 100%;
+        width: 10rem;
     }
 
     #theme-toggle > div {
