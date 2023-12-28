@@ -4,4 +4,4 @@ export type Post = {
     slug: string;
     date: string;
     published: boolean;
-}
+};

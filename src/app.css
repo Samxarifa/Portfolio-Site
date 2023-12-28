@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 @media (prefers-color-scheme: dark) {
     :root {
@@ -62,7 +62,6 @@
     --shiki-token-string-expression: #0a3069;
     --shiki-token-punctuation: #24292f;
     --shiki-token-link: #000012;
-
 }
 
 [data-theme="dark"] {
@@ -94,7 +93,8 @@ html {
 }
 
 html:not(.no-transition) {
-    --theme-transition: color 0.2s ease-in-out 0s, background-color 0.2s ease-in-out 0s;
+    --theme-transition: color 0.2s ease-in-out 0s,
+        background-color 0.2s ease-in-out 0s;
 }
 
 body {
@@ -104,7 +104,8 @@ body {
     transition: var(--theme-transition);
 }
 
-#markdown, #markdown * {
+#markdown,
+#markdown * {
     transition: var(--theme-transition);
 }
 
@@ -126,7 +127,7 @@ body {
     object-fit: cover;
 }
 
-#markdown :is(h1,h2,h3,h4,h5,h6) {
+#markdown :is(h1, h2, h3, h4, h5, h6) {
     /* font-size: 3rem; */
     margin-block: 1rem;
 }
@@ -150,12 +151,10 @@ body {
     html {
         font-size: 60%;
     }
-    
 }
 
 @media (max-width: 400px) {
     html {
         font-size: 58%;
     }
-    
 }

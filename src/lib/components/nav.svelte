@@ -1,5 +1,22 @@
-<nav class={focused? 'focused': ''}>
-    <button id='menu-toggle' on:click={toggleNav}>
+<script lang="ts">
+    import { theme, toggleTheme } from "$lib/theme";
+    import { Sun, Moon, SunMoon } from "lucide-svelte";
+    import { fly } from "svelte/transition";
+    import ContentWrapper from "./contentWrapper.svelte";
+
+    let focused = false;
+
+    const toggleNav = () => {
+        focused = !focused;
+    };
+
+    const closeNav = () => {
+        focused = false;
+    };
+</script>
+
+<nav class={focused ? "focused" : ""}>
+    <button id="menu-toggle" on:click={toggleNav}>
         <div>
             <span />
         </div>
@@ -12,19 +29,19 @@
                 <li><a on:click={closeNav} href="/posts">Posts</a></li>
                 <li><a on:click={closeNav} href="/links">Links</a></li>
             </ul>
-            <button on:click={toggleTheme} id='theme-toggle'>
-                {#if $theme === 'dark'}
-                    <div in:fly={{y: 10}}>
+            <button on:click={toggleTheme} id="theme-toggle">
+                {#if $theme === "dark"}
+                    <div in:fly={{ y: 10 }}>
                         <Moon />
                         <span>Dark</span>
                     </div>
-                {:else if $theme === 'light'}
-                    <div in:fly={{y: 10}}>
+                {:else if $theme === "light"}
+                    <div in:fly={{ y: 10 }}>
                         <Sun />
                         <span>Light</span>
                     </div>
                 {:else}
-                    <div in:fly={{y: 10}}>
+                    <div in:fly={{ y: 10 }}>
                         <SunMoon />
                         <span>Auto</span>
                     </div>
@@ -33,23 +50,6 @@
         </div>
     </ContentWrapper>
 </nav>
-
-<script lang="ts">
-    import {theme, toggleTheme} from '$lib/theme';
-    import {Sun, Moon, SunMoon} from 'lucide-svelte';
-    import {fly} from 'svelte/transition';
-    import ContentWrapper from './contentWrapper.svelte';
-
-    let focused = false;
-
-    const toggleNav = () => {
-        focused = !focused;
-    }
-
-    const closeNav = () => {
-        focused = false;
-    }
-</script>
 
 <style>
     #menu-toggle {
@@ -64,20 +64,23 @@
         border: none;
         color: var(--text);
     }
-    
+
     #menu-toggle > div {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100%;
     }
-    
+
     #menu-toggle > div > span {
         width: 3rem;
         height: 3px;
         background: var(--text);
         border-radius: 1rem;
-        transition: width 0.2s ease, transform 0.2s ease, var(--theme-transition);
+        transition:
+            width 0.2s ease,
+            transform 0.2s ease,
+            var(--theme-transition);
         margin-top: 4px;
         transform: scale(0.95);
     }
@@ -87,8 +90,9 @@
         transform: translateX(-1.5rem);
     }
 
-    #menu-toggle > div > span::before, #menu-toggle > div > span::after {
-        content: '';
+    #menu-toggle > div > span::before,
+    #menu-toggle > div > span::after {
+        content: "";
         position: absolute;
         width: 3rem;
         height: 3px;
@@ -98,31 +102,40 @@
 
     #menu-toggle > div > span::before {
         transform: translate(-1.5rem, -1rem);
-        transition: transform 0.2s ease, var(--theme-transition);
+        transition:
+            transform 0.2s ease,
+            var(--theme-transition);
     }
-    
+
     #menu-toggle > div > span::after {
         transform: translate(-1.5rem, 1rem);
-        transition: transform 0.2s ease, var(--theme-transition);
+        transition:
+            transform 0.2s ease,
+            var(--theme-transition);
     }
 
     nav.focused #menu-toggle > div > span::before {
         transform: rotate(45deg);
-    }    
+    }
 
     nav.focused #menu-toggle > div > span::after {
         transform: rotate(-45deg);
-    } 
+    }
 
     h1 {
         text-transform: uppercase;
         margin-right: auto;
         height: 100%;
-        
     }
-    
+
     h1 a {
-        background: linear-gradient(to right, var(--lightblue), var(--lightgreen),var(--yellow), var(--lightred));
+        background: linear-gradient(
+            to right,
+            var(--lightblue),
+            var(--lightgreen),
+            var(--yellow),
+            var(--lightred)
+        );
         background-size: 300% 100%;
         background-clip: text;
         color: transparent;
@@ -133,7 +146,6 @@
         justify-content: center;
         align-items: center;
         transition: background-position 0.2s ease;
-
     }
 
     h1 a:hover {
@@ -218,11 +230,13 @@
 
     @media (min-width: 570px) {
         li a {
-            transition: var(--theme-transition), background-color none;
+            transition:
+                var(--theme-transition),
+                background-color none;
         }
-        
+
         li a::after {
-            content: '';
+            content: "";
             position: absolute;
             width: 100%;
             transform: scaleX(0);
@@ -232,15 +246,14 @@
             left: 0;
             background-color: var(--fg);
             transform-origin: bottom right;
-            transition: transform 0.2s ease;   
+            transition: transform 0.2s ease;
         }
-    
+
         li a:hover::after {
             transform: scaleX(1);
             transform-origin: bottom left;
         }
     }
-
 
     @media (max-width: 570px) {
         #menu-toggle {
@@ -248,15 +261,17 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         h1 {
             font-size: 3rem;
         }
-        
+
         nav {
             overflow: hidden;
             position: fixed;
-            transition: height 0.2s ease-in-out, var(--theme-transition);
+            transition:
+                height 0.2s ease-in-out,
+                var(--theme-transition);
             height: 8rem;
         }
 

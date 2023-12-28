@@ -1,38 +1,45 @@
+<script lang="ts">
+    import { browser } from "$app/environment";
+    import ContentWrapper from "$lib/components/contentWrapper.svelte";
+    import ProfilePic from "$lib/components/profilePic.svelte";
+    import Typewriter from "typewriter-effect/dist/core";
+    import { onMount } from "svelte";
+    import { fly } from "svelte/transition";
+
+    let span: HTMLSpanElement;
+    onMount(() => {
+        browser &&
+            new Typewriter(span, {
+                strings: [
+                    "Portfolio",
+                    "Website",
+                    "Projects",
+                    "Tests",
+                    "Page",
+                    "Code",
+                ],
+                autoStart: true,
+                loop: true,
+                delay: 100,
+                deleteSpeed: 100,
+                pauseFor: 5000,
+            });
+    });
+</script>
+
 <ContentWrapper max={1400}>
     <hgroup>
-        <div in:fly={{x: -100}}>
+        <div in:fly={{ x: -100 }}>
             <h1>Xarifa</h1>
-            <h2 id='tagline'>Sam Hay's <span bind:this={span}> </span></h2>
+            <h2 id="tagline">Sam Hay's <span bind:this={span}> </span></h2>
         </div>
         <ProfilePic />
-    </hgroup> 
-    <main in:fly={{y:100, delay:500}}>
+    </hgroup>
+    <main in:fly={{ y: 100, delay: 500 }}>
         <h2>Home Page</h2>
         <p>Work in Progress...</p>
     </main>
 </ContentWrapper>
-
-<script lang="ts">
-    import { browser } from '$app/environment';
-    import ContentWrapper from '$lib/components/contentWrapper.svelte';
-    import ProfilePic from '$lib/components/profilePic.svelte';
-    import Typewriter from 'typewriter-effect/dist/core';
-    import { onMount } from 'svelte';
-    import { fly } from 'svelte/transition';
-
-    let span: HTMLSpanElement;
-    onMount(() => {
-        browser && new Typewriter(span, {
-            strings: ['Portfolio', 'Website', 'Projects','Tests','Page','Code'],
-            autoStart: true,
-            loop: true,
-            delay: 100,
-            deleteSpeed: 100,
-            pauseFor: 5000,
-        });
-    });
-    
-</script>
 
 <style>
     @keyframes slide-in {
@@ -90,7 +97,13 @@
     }
 
     h1 {
-        background: linear-gradient(to right, var(--lightblue), var(--lightgreen),var(--yellow), var(--lightred));
+        background: linear-gradient(
+            to right,
+            var(--lightblue),
+            var(--lightgreen),
+            var(--yellow),
+            var(--lightred)
+        );
         background-size: 300% 100%;
         background-clip: text;
         color: transparent;
@@ -101,18 +114,25 @@
         animation: color-scroll 15s ease 0s infinite;
     }
 
-
     h1::after {
-        content: '';
+        content: "";
         position: absolute;
         width: 100%;
         height: 5px;
         border-radius: 1rem;
         bottom: 0;
         left: 0;
-        background: linear-gradient(to right, var(--lightblue), var(--lightgreen),var(--yellow), var(--lightred));
+        background: linear-gradient(
+            to right,
+            var(--lightblue),
+            var(--lightgreen),
+            var(--yellow),
+            var(--lightred)
+        );
         background-size: 300% 100%;
-        animation: slide-in 10s ease-out infinite, color-scroll 15s ease 0s infinite;
+        animation:
+            slide-in 10s ease-out infinite,
+            color-scroll 15s ease 0s infinite;
     }
 
     h2:not(#tagline) {
@@ -132,7 +152,7 @@
             height: 25rem;
         }
     }
-    
+
     @media (max-width: 450px) {
         hgroup {
             flex-direction: column-reverse;
@@ -140,5 +160,4 @@
             margin-bottom: 5rem;
         }
     }
-
 </style>
