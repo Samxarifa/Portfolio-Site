@@ -1,55 +1,61 @@
-<ContentWrapper max={1000}> 
+<script lang="ts">
+    import ContentWrapper from "$lib/components/contentWrapper.svelte";
+    import { Github, Mail } from "lucide-svelte";
+    import { onMount } from "svelte";
+    import { fly } from "svelte/transition";
+
+    let items: { url: string; icon: typeof Github }[] = [];
+
+    onMount(() => {
+        items = [
+            {
+                url: "https://www.github.com/Samxarifa",
+                icon: Github,
+            },
+            {
+                url: "mailto:sam@xarifa.co.uk",
+                icon: Mail,
+            },
+        ];
+    });
+</script>
+
+<ContentWrapper max={1000}>
     <main>
         <h2>Links</h2>
 
         <section>
             <ul>
                 {#each items as item, i}
-                    <li in:fly={{x: -100,delay:(100*(i+1)+100)}}><a href={item.url}><span><svelte:component this={item.icon} size={64} /></span></a></li>
+                    <li in:fly={{ x: -100, delay: 100 * (i + 1) + 100 }}>
+                        <a href={item.url}
+                            ><span
+                                ><svelte:component
+                                    this={item.icon}
+                                    size={64}
+                                /></span
+                            ></a
+                        >
+                    </li>
                 {/each}
             </ul>
         </section>
     </main>
 </ContentWrapper>
 
-<script lang="ts">
-
-    import ContentWrapper from "$lib/components/contentWrapper.svelte";
-    import { Github, Mail } from "lucide-svelte";
-    import { onMount } from "svelte";
-    import { fly } from "svelte/transition";
-    
-    let items: {url: string, icon: typeof Github}[] = [];
-
-    onMount(() => {
-        items = [
-            {
-                url: 'https://www.github.com/Samxarifa',
-                icon: Github
-            },
-            {
-                url: 'mailto:sam@xarifa.co.uk',
-                icon: Mail
-            }
-        ]
-    });
-        
-
-
-</script>
-
 <style>
     @keyframes color-scroll {
-        0%, 100% {
+        0%,
+        100% {
             background-position: 0% 100%;
         }
         50% {
             background-position: 100% 100%;
         }
     }
-    
+
     h2 {
-       font-size: 5rem;
+        font-size: 5rem;
     }
 
     section {
@@ -83,8 +89,14 @@
         justify-content: center;
     }
 
-    a:hover span{
-        background: linear-gradient(to right, var(--lightblue), var(--lightgreen), var(--yellow), var(--lightred));
+    a:hover span {
+        background: linear-gradient(
+            to right,
+            var(--lightblue),
+            var(--lightgreen),
+            var(--yellow),
+            var(--lightred)
+        );
         background-size: 300% 100%;
         color: white;
         animation: color-scroll 5s ease 0s infinite;

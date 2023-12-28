@@ -1,7 +1,13 @@
-<div style="--max: {max}px">
-    <slot></slot>
-</div>
+<script lang="ts">
+    /**
+     * @type {number} max width in pixels
+     */
+    export let max = 1920;
+</script>
 
+<div style="--max: {max}px">
+    <slot />
+</div>
 
 <style>
     div {
@@ -10,10 +16,3 @@
         height: 100%;
     }
 </style>
-
-<script lang="ts">
-    /**
-     * @type {number} max width in pixels
-     */
-    export let max = 1920;
-</script>

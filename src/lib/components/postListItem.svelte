@@ -1,23 +1,13 @@
-<li use:inview={{unobserveOnEnter:true}} on:inview_enter={handleView}>
-    {#if visible}    
-        <a href='posts/{post.slug}' in:fade={{delay:200}}>
-            <h3>{post.title}</h3>
-            <p class='date'>{formatDate(post.date,'short')}</p>
-            <p class="description">{post.description}</p>
-        </a>
-    {/if}
-</li>
-
 <script lang="ts">
     import { formatDate } from "$lib/utils.js";
-    import {inview} from 'svelte-inview';
+    import { inview } from "svelte-inview";
     import { fade } from "svelte/transition";
-    
-    export let post : {
-        title: string,
-        date: string,
-        description: string,
-        slug: string
+
+    export let post: {
+        title: string;
+        date: string;
+        description: string;
+        slug: string;
     };
 
     let visible = false;
@@ -27,6 +17,16 @@
     }
 </script>
 
+<li use:inview={{ unobserveOnEnter: true }} on:inview_enter={handleView}>
+    {#if visible}
+        <a href="posts/{post.slug}" in:fade={{ delay: 200 }}>
+            <h3>{post.title}</h3>
+            <p class="date">{formatDate(post.date, "short")}</p>
+            <p class="description">{post.description}</p>
+        </a>
+    {/if}
+</li>
+
 <style>
     li {
         margin-bottom: 2rem;
@@ -34,7 +34,7 @@
     }
 
     li::after {
-        content: '';
+        content: "";
         display: block;
         width: 100%;
         height: 5px;
@@ -64,7 +64,13 @@
         grid-row: 1/2;
         grid-column: 1/2;
         font-size: 4rem;
-        background: linear-gradient(to right, var(--lightblue), var(--lightgreen), var(--yellow), var(--lightred));
+        background: linear-gradient(
+            to right,
+            var(--lightblue),
+            var(--lightgreen),
+            var(--yellow),
+            var(--lightred)
+        );
         background-size: 300% 100%;
         background-clip: text;
         color: transparent;

@@ -1,21 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="no-transition">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-		<script type="module">
-			// Check if theme is stored in browser storage
-			const theme = localStorage.getItem('theme');
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        %sveltekit.head%
+    </head>
+    <body data-sveltekit-preload-data="hover">
+        <div style="display: contents">%sveltekit.body%</div>
+        <script type="module">
+            // Check if theme is stored in browser storage
+            const theme = localStorage.getItem("theme");
 
-			if (theme) {
-				// Apply theme
-				document.documentElement.setAttribute('data-theme', theme);
-			}
-		</script>
-	</body>
+            if (theme) {
+                // Apply theme
+                document.documentElement.setAttribute("data-theme", theme);
+            }
+        </script>
+    </body>
 </html>
