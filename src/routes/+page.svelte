@@ -11,22 +11,24 @@
     let span: HTMLSpanElement;
     onMount(() => {
         loaded = true;
-        browser &&
-            new Typewriter(span, {
-                strings: [
-                    "Portfolio",
-                    "Website",
-                    "Projects",
-                    "Tests",
-                    "Page",
-                    "Code",
-                ],
-                autoStart: true,
-                loop: true,
-                delay: 100,
-                deleteSpeed: 100,
-                pauseFor: 5000,
-            });
+        setTimeout(() => {
+            browser &&
+                new Typewriter(span, {
+                    strings: [
+                        "Portfolio",
+                        "Website",
+                        "Projects",
+                        "Tests",
+                        "Page",
+                        "Code",
+                    ],
+                    autoStart: true,
+                    loop: true,
+                    delay: 100,
+                    deleteSpeed: 100,
+                    pauseFor: 5000,
+                });
+        }, 1000);
     });
 </script>
 
