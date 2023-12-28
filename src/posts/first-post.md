@@ -1,7 +1,7 @@
 ---
 title: First Post
 description: My first post to my portfolio
-date: '2023-12-26'
+date: "2023-12-26"
 published: true
 ---
 
@@ -14,13 +14,13 @@ print('Hello World! 👋')
 ```
 
 ```ts
-console.log('Hello World! 👋');
+console.log("Hello World! 👋");
 // Test Comment
 
 const test = 0;
 
-function testFunc(hello:string) {
-    return hello;
+function testFunc(hello: string) {
+  return hello;
 }
 ```
 
