@@ -14,6 +14,9 @@
             <h2>Posts</h2>
             <Searchbox bind:searchVal />
         </hgroup>
+        {#if searchVal}
+            <p>Search results for "{searchVal}":</p>
+        {/if}
         <section>
             <ul>
                 {#each data.posts as post}
@@ -49,5 +52,11 @@
         align-items: center;
         gap: 1rem;
         position: relative;
+        overflow-x: hidden;
+    }
+
+    p {
+        font-size: 2rem;
+        margin-top: 1rem;
     }
 </style>
