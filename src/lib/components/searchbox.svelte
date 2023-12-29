@@ -23,6 +23,7 @@
             event.preventDefault();
             if (searchInput !== document.activeElement) {
                 searchInput.focus();
+                searchInput.select();
             } else {
                 searchInput.blur();
             }

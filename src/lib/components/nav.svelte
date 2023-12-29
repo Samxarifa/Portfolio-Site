@@ -15,6 +15,15 @@
     };
 </script>
 
+<svelte:window
+    on:keydown={(event) => {
+        if (event.key === ";" && event.ctrlKey) {
+            event.preventDefault();
+            toggleTheme();
+        }
+    }}
+/>
+
 <nav class={focused ? "focused" : ""}>
     <button id="menu-toggle" on:click={toggleNav}>
         <div>
