@@ -102,6 +102,7 @@ body {
     color: var(--text);
     font-size: 1.6rem;
     transition: var(--theme-transition);
+    overflow-x: hidden;
 }
 
 #markdown,
