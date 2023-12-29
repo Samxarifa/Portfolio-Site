@@ -232,7 +232,7 @@
         li a {
             transition:
                 var(--theme-transition),
-                background-color none;
+                background-color 0s;
         }
 
         li a::after {
