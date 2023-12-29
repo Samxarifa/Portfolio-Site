@@ -61,7 +61,7 @@
         position: relative;
         cursor: text;
         max-width: 40rem;
-        width: 40rem;
+        width: 5rem;
         height: 5rem;
         font-size: 2rem;
         padding: 1rem;
@@ -93,6 +93,13 @@
         transform: translate(50%, -50%);
         cursor: pointer;
         transition: var(--theme-transition);
+    }
+
+    @media (min-width: 660px) {
+        input {
+            width: 40rem;
+            padding-left: 1rem;
+        }
     }
 
     @media (max-width: 660px) {
