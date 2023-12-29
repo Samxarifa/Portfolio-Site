@@ -18,7 +18,7 @@
                         "Portfolio",
                         "Website",
                         "Projects",
-                        "Tests",
+                        "Blog",
                         "Page",
                         "Code",
                     ],
