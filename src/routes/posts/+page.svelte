@@ -77,7 +77,8 @@
         height: 5rem;
         font-size: 2rem;
         padding: 1rem;
-        padding-right: 4rem;
+        padding-right: 5rem;
+        padding-left: 0;
         overflow: hidden;
         border-radius: 1rem;
         background-color: var(--fg);
@@ -86,6 +87,7 @@
         outline: none;
         transition:
             width 0.5s ease-in-out,
+            padding 0s linear 0.1s,
             var(--theme-transition);
     }
 
@@ -93,6 +95,7 @@
     input:not(:placeholder-shown) {
         width: 100%;
         cursor: text;
+        padding-left: 1rem;
     }
 
     label {
@@ -101,7 +104,6 @@
         right: 2.5rem;
         color: var(--text);
         transform: translate(50%, -50%);
-        z-index: 2;
         cursor: pointer;
     }
 

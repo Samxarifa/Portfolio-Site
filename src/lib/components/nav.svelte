@@ -180,7 +180,7 @@
         padding: 1rem;
         background: var(--bg);
         color: var(--text);
-        z-index: 1;
+        z-index: 10;
         transition: var(--theme-transition);
         position: relative;
     }
