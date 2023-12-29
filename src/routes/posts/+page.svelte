@@ -52,6 +52,7 @@
         align-items: center;
         gap: 1rem;
         position: relative;
+        overflow-x: hidden;
     }
 
     p {
