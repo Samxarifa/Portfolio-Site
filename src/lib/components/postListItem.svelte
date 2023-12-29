@@ -93,6 +93,15 @@
     }
 
     @media (max-width: 570px) {
+        li {
+            margin-bottom: 0;
+            min-height: 12rem;
+        }
+
+        li::after {
+            margin-top: 0;
+        }
+
         a {
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr 1fr;
