@@ -1,9 +1,11 @@
 <script lang="ts">
     import { Search } from "lucide-svelte";
     import { onMount } from "svelte";
+    import { fly } from "svelte/transition";
 
     let searchInput: HTMLInputElement;
     let searchPlaceholder: string;
+    let loadSearch = false;
 
     export let searchVal: string;
 
@@ -14,6 +16,7 @@
 
     onMount(() => {
         changePlaceholder();
+        loadSearch = true;
     });
 </script>
 
@@ -36,17 +39,19 @@
     }}
 />
 
-<div id="div_search">
-    <input
-        id="search"
-        name="search"
-        type="text"
-        placeholder={searchPlaceholder}
-        bind:value={searchVal}
-        bind:this={searchInput}
-    />
-    <label for="search"><Search /></label>
-</div>
+{#if loadSearch}
+    <div id="div_search" in:fly={{ x: 100 }}>
+        <input
+            id="search"
+            name="search"
+            type="text"
+            placeholder={searchPlaceholder}
+            bind:value={searchVal}
+            bind:this={searchInput}
+        />
+        <label for="search"><Search /></label>
+    </div>
+{/if}
 
 <style>
     #div_search {
