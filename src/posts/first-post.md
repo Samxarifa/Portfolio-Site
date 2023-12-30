@@ -5,10 +5,10 @@ date: 2023-12-26
 published: true
 ---
 
-# My first Post
+## My first Post
 
 This is my first post to the page. It is also a test post to see if all the functions of making a publishing a post are working...
-This page was made with sveltekit and typescript. It also uses MDsveX for markdown support as well as shiki for syntax highlighting for code blocks.
+This page was made with SvelteKit and TypeScript. It also uses MDsveX for markdown support as well as Shiki for syntax highlighting code blocks.
 
 ---
 
@@ -27,6 +27,17 @@ if (theme) {
 ```
 
 This is code for this website to check for manual light or dark mode on page load.
+
+---
+
+## Things I Learned
+
+-   The basics of Svelte and SvelteKit
+-   Coding in TypeScript
+-   Github (Including multiple branches and merging between the two)
+-   How to write "posts" in markdown format
+
+---
 
 ## Links
 
