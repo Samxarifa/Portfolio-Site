@@ -151,6 +151,10 @@ body {
     margin-block: 2rem;
 }
 
+#markdown ul {
+    margin-left: 4rem;
+}
+
 @media (max-width: 500px) {
     html {
         font-size: 60%;
