@@ -1,6 +1,6 @@
 <script lang="ts">
     /**
-     * @type {number} max width in pixels
+     * @type {number} max width in REM
      */
     export let max = 192;
 </script>
