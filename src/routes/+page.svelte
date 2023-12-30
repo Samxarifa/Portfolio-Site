@@ -33,7 +33,7 @@
 </script>
 
 {#if loaded}
-    <ContentWrapper max={1400}>
+    <ContentWrapper max={140}>
         <hgroup>
             <div in:fly={{ x: -100 }}>
                 <h1>Xarifa</h1>
@@ -42,7 +42,7 @@
             <ProfilePic />
         </hgroup>
     </ContentWrapper>
-    <ContentWrapper max={1000}>
+    <ContentWrapper max={100}>
         <main in:fly={{ y: 100, delay: 500 }}>
             <h2>Who am I?</h2>
             <p>
@@ -57,10 +57,10 @@
                 sveltekit with typescript. I chose to use svelte as it seemed
                 easy and fun to pick up and learn. I wasn't originally planning
                 to do anything with svelte other than play around, but as I went
-                further with this site, I thought I might aswell use it. This is
-                my first time using svelte but I have also breifly placed around
-                with React/NextJS in the past. I have also made sites with PHP,
-                as well as use other languages in non-web projects.
+                further with this site, I thought I might as well use it. This
+                is my first time using svelte but I have also briefly placed
+                around with React/NextJS in the past. I have also made sites
+                with PHP, as well as use other languages in non-web projects.
             </p>
             <br />
             <ul>

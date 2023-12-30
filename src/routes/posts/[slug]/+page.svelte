@@ -7,7 +7,7 @@
     export let data;
 </script>
 
-<ContentWrapper max={1000}>
+<ContentWrapper max={100}>
     <a href="/posts"
         ><div><ChevronLeft size={48} /></div>
         <span>Back</span></a
