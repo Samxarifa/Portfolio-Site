@@ -20,7 +20,7 @@
     });
 </script>
 
-<ContentWrapper max={1000}>
+<ContentWrapper max={100}>
     <main>
         <h2>Links</h2>
 

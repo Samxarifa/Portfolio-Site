@@ -2,10 +2,10 @@
     /**
      * @type {number} max width in pixels
      */
-    export let max = 1920;
+    export let max = 192;
 </script>
 
-<div style="--max: {max}px">
+<div style="--max: {max}rem">
     <slot />
 </div>
 

@@ -172,3 +172,9 @@ body {
         font-size: 58%;
     }
 }
+
+@media (min-width: 2000px) {
+    html {
+        font-size: 80%;
+    }
+}

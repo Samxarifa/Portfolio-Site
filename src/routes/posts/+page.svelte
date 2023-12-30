@@ -31,11 +31,11 @@
         }
         if (!filter || filter === "nto") {
             posts = posts.sort((a, b) => {
-                return new Date(b.date) - new Date(a.date);
+                return new Date(b.date).getTime() - new Date(a.date).getTime();
             });
         } else if (filter === "otn") {
             posts = posts.sort((a, b) => {
-                return new Date(a.date) - new Date(b.date);
+                return new Date(a.date).getTime() - new Date(b.date).getTime();
             });
         } else if (filter === "atz") {
             posts = posts.sort((a, b) => {
@@ -49,7 +49,7 @@
     }
 </script>
 
-<ContentWrapper max={1000}>
+<ContentWrapper max={100}>
     <main>
         <hgroup>
             <h2>Posts</h2>
@@ -70,8 +70,8 @@
             <select
                 name="filter"
                 id="filter"
-                on:change={() => {
-                    filter = event.target.value;
+                on:change={(event) => {
+                    filter = event.currentTarget.value;
                 }}
             >
                 <option selected value="nto">New to Old</option>
