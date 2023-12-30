@@ -147,6 +147,10 @@ body {
     text-decoration: none;
 }
 
+#markdown p {
+    margin-block: 2rem;
+}
+
 @media (max-width: 500px) {
     html {
         font-size: 60%;
