@@ -3,9 +3,32 @@
     import PostListItem from "$lib/components/postListItem.svelte";
     import { formatDate } from "$lib/utils.js";
     import Searchbox from "$lib/components/searchbox.svelte";
-    let searchVal = "";
+    import type { Post } from "$lib/types.js";
 
+    let searchVal = "";
+    let posts: Post[];
     export let data;
+
+    $: {
+        if (searchVal) {
+            posts = [];
+            data.posts.forEach((post) => {
+                if (
+                    post.title
+                        .toLowerCase()
+                        .includes(searchVal.toLowerCase()) ||
+                    formatDate(post.date, "short").includes(searchVal) ||
+                    post.description
+                        .toLowerCase()
+                        .includes(searchVal.toLowerCase())
+                ) {
+                    posts = [...posts, post];
+                }
+            });
+        } else {
+            posts = data.posts;
+        }
+    }
 </script>
 
 <ContentWrapper max={1000}>
@@ -15,18 +38,18 @@
             <Searchbox bind:searchVal />
         </hgroup>
         {#if searchVal}
-            <p>Search results for "{searchVal}":</p>
+            {#if posts.length === 0}
+                <p>No results for "{searchVal}"</p>
+            {:else if posts.length === 1}
+                <p>1 result for "{searchVal}":</p>
+            {:else if posts.length > 1}
+                <p>{posts.length} results for "{searchVal}":</p>
+            {/if}
         {/if}
         <section>
             <ul>
-                {#each data.posts as post}
-                    {#if !searchVal || post.title
-                            .toLowerCase()
-                            .includes(searchVal.toLowerCase()) || formatDate(post.date, "short").includes(searchVal) || post.description
-                            .toLowerCase()
-                            .includes(searchVal.toLowerCase())}
-                        <PostListItem {post} />
-                    {/if}
+                {#each posts as post}
+                    <PostListItem {post} />
                 {/each}
             </ul>
         </section>
