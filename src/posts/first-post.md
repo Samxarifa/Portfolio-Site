@@ -41,6 +41,6 @@ This is code for this website to check for manual light or dark mode on page loa
 
 ## Links
 
--   The source-code for this website is on [Github](https://github.com/Samxarifa/Portfolio_Svelte)
+-   The source-code for this website is on [Github](https://github.com/Samxarifa/Portfolio-Site)
 -   The [Svelte](https://kit.svelte.dev/) package
 -   [MDsveX](https://mdsvex.com/) and [Shiki](https://shiki.matsu.io/) for markdown support
