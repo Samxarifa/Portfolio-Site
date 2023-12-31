@@ -105,8 +105,8 @@ body {
     overflow-x: hidden;
 }
 
-#markdown,
-#markdown * {
+pre,
+pre * {
     transition: var(--theme-transition);
 }
 
