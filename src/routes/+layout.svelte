@@ -1,10 +1,9 @@
 <script lang="ts">
     import "../app.css";
     import Nav from "$lib/components/nav.svelte";
-    import { onMount } from "svelte";
-    import PageTransition from "$lib/components/pageTransition.svelte";
+    import ViewTransition from "$lib/components/viewTransition.svelte";
 
-    export let data;
+    import { onMount } from "svelte";
 
     onMount(() => {
         document.documentElement.classList.remove("no-transition");
@@ -17,7 +16,21 @@
     <link rel="icon" href="/profile-pic.png" />
 </svelte:head>
 
+<ViewTransition />
 <Nav />
-<PageTransition url={data.url}>
+<div>
     <slot />
-</PageTransition>
+</div>
+
+<style>
+    div {
+        height: 100%;
+        margin: 4rem;
+    }
+
+    @media (max-width: 570px) {
+        div {
+            margin-top: 12rem;
+        }
+    }
+</style>

@@ -1,7 +1,5 @@
 <script lang="ts">
     import { formatDate } from "$lib/utils.js";
-    import { inview } from "svelte-inview";
-    import { fade } from "svelte/transition";
 
     export let post: {
         title: string;
@@ -9,22 +7,16 @@
         description: string;
         slug: string;
     };
-
-    let visible = false;
-
-    function handleView() {
-        visible = true;
-    }
 </script>
 
-<li use:inview={{ unobserveOnEnter: true }} on:inview_enter={handleView}>
-    {#if visible}
-        <a href="posts/{post.slug}" in:fade={{ delay: 200 }}>
-            <h3>{post.title}</h3>
-            <p class="date">{formatDate(post.date, "short")}</p>
-            <p class="description">{post.description}</p>
-        </a>
-    {/if}
+<li>
+    <a href="posts/{post.slug}">
+        <h3 style="--name: title-{post.slug}">{post.title}</h3>
+        <p class="date">{formatDate(post.date, "short")}</p>
+        <p class="description">
+            {post.description}
+        </p>
+    </a>
 </li>
 
 <style>
@@ -77,6 +69,7 @@
         width: fit-content;
         text-transform: capitalize;
         transition: background-position 0.2s ease-in-out;
+        view-transition-name: var(--name);
     }
 
     .date {

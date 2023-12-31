@@ -3,6 +3,7 @@ export async function load({ params }) {
         const post = await import(`../../../posts/${params.slug}.md`);
 
         return {
+            slug: params.slug,
             meta: post.metadata,
             content: post.default,
         };

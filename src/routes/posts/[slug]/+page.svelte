@@ -14,8 +14,10 @@
     >
     <article in:fade>
         <hgroup>
-            <h1>{data.meta.title}</h1>
-            <p class="date">Published on the {formatDate(data.meta.date)}</p>
+            <h1 style="--name: title-{data.slug}">{data.meta.title}</h1>
+            <p class="date">
+                Published on the {formatDate(data.meta.date)}
+            </p>
             <h2>{data.meta.description}</h2>
         </hgroup>
 
@@ -62,8 +64,21 @@
     }
 
     h1 {
-        font-size: 5rem;
-        margin-bottom: 1rem;
+        font-size: 4rem;
+        background: linear-gradient(
+            to right,
+            var(--lightblue),
+            var(--lightgreen),
+            var(--yellow),
+            var(--lightred)
+        );
+        background-size: 300% 100%;
+        background-clip: text;
+        color: transparent;
+        width: fit-content;
+        text-transform: capitalize;
+        transition: background-position 0.2s ease-in-out;
+        view-transition-name: var(--name);
     }
 
     .date {
