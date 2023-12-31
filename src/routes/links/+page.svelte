@@ -87,6 +87,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        color: var(--text);
+        transition: var(--theme-transition);
     }
 
     a:hover span {

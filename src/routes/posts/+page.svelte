@@ -131,7 +131,11 @@
         color: var(--text);
         cursor: pointer;
         transition: var(--theme-transition);
-        text-align: right;
+        text-align-last: right;
+    }
+
+    option {
+        direction: ltr;
     }
 
     p {
