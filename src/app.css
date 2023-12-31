@@ -105,8 +105,44 @@ body {
     overflow-x: hidden;
 }
 
-#markdown,
-#markdown * {
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--fg);
+    border-radius: 5px;
+}
+
+pre,
+pre * {
+    transition: var(--theme-transition);
+}
+
+#markdown h1 {
+    font-size: 3rem;
+}
+
+#markdown pre {
+    background-color: var(--fg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    tab-size: 2;
+    margin-block: 1rem;
+}
+
+#markdown img {
+    max-width: 512px;
+    object-fit: cover;
+}
+
+pre,
+pre * {
     transition: var(--theme-transition);
 }
 
