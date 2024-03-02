@@ -31,7 +31,10 @@
 <svelte:head>
     <title>Xarifa</title>
     <meta name="description" content="Sam Hay's Portfolio Website" />
-    <link rel="icon" href="/profile-pic.png" />
+    <link
+        rel="icon"
+        href="https://samxarifa.github.io/Static/Portfolio/profile-pic.png"
+    />
 </svelte:head>
 
 <Nav />

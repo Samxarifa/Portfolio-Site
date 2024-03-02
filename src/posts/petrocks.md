@@ -16,7 +16,7 @@ This is a PHP eCommerce website that I was tasked to design, implement and test 
 
 It was originally for HNC but I was required to expand upon it with new functionality such as media queries and an admin page for HND. The only functionality it doesn't have is a payment processor.
 
-![Pet Rocks website home page](/Posts/petrocks/home-page.png)
+![Pet Rocks website home page](https://samxarifa.github.io/Static/Portfolio/Posts/petrocks/home-page.png)
 
 ### Why Pet Rocks?
 

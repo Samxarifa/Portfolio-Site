@@ -8,22 +8,22 @@
     "description": "Sam Hay's Portfolio Site",
     "icons": [
         {
-            "src": "/icons/pwa-64x64.png",
+            "src": "https://samxarifa.github.io/Static/Portfolio/icons/pwa-64x64.png",
             "sizes": "64x64",
             "type": "image/png"
         },
         {
-            "src": "/icons/pwa-192x192.png",
+            "src": "https://samxarifa.github.io/Static/Portfolio/icons/pwa-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/icons/pwa-512x512.png",
+            "src": "https://samxarifa.github.io/Static/Portfolio/icons/pwa-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         },
         {
-            "src": "/icons/maskable-icon-512x512.png",
+            "src": "https://samxarifa.github.io/Static/Portfolio/icons/maskable-icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "maskable"
