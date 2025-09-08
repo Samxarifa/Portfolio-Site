@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       lucide-svelte:
-        specifier: ^0.300.0
-        version: 0.300.0(svelte@4.2.19)
+        specifier: ^0.542.0
+        version: 0.542.0(svelte@4.2.19)
       shiki:
         specifier: ^3.2.2
         version: 3.2.2
@@ -903,10 +903,10 @@ packages:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
 
-  lucide-svelte@0.300.0:
-    resolution: {integrity: sha512-oRWQR+ESh1zedKipUir8aXxbPeThrJ32OYJzcVpTMA2fj9mZUhG9Gn9MDFSLapKpzBF63XvA91eaxqeAhQ0icQ==}
+  lucide-svelte@0.542.0:
+    resolution: {integrity: sha512-KxqJycY4EWaGy1zk/7sqEcf48j4YaP9zEujYczzrsw5j9b9b5pjAJ1qGFKZvD7T6xz9reSYAfUAd6Bz62TdqGw==}
     peerDependencies:
-      svelte: '>=3 <5'
+      svelte: ^3 || ^4 || ^5.0.0-next.42
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -2186,7 +2186,7 @@ snapshots:
     dependencies:
       js-tokens: 4.0.0
 
-  lucide-svelte@0.300.0(svelte@4.2.19):
+  lucide-svelte@0.542.0(svelte@4.2.19):
     dependencies:
       svelte: 4.2.19
 
